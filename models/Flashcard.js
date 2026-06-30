@@ -1,24 +1,31 @@
-const mongoose = require('mongoose');
-
-const flashcardSchema = new mongoose.Schema({
-
-    question:{
-        type:String,
-        required:true
-    },
-
-    answer:{
-        type:String,
-        required:true
-    },
-
-    category:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref:"Category",
-        required:true
-    }
-
-},{timestamps:true});
+const mongoose=require("mongoose");
 
 
-module.exports = mongoose.model("Flashcard", flashcardSchema);
+const flashcardSchema=new mongoose.Schema({
+
+question:{
+type:String,
+required:true
+},
+
+
+answer:{
+type:String,
+required:true
+},
+
+
+category:{
+type:mongoose.Schema.Types.ObjectId,
+ref:"Category",
+required:true
+}
+
+
+});
+
+
+module.exports=mongoose.model(
+"Flashcard",
+flashcardSchema
+);

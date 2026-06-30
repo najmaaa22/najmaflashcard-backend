@@ -1,8 +1,14 @@
-const express = require('express');
-const router = express.Router();
-const flashcardController = require('../controllers/flashcardController');
+const router=require("express").Router();
 
-router.post('/', flashcardController.createFlashcard);
-router.get('/:categoryId', flashcardController.getFlashcardsByCategory);
+const controller=require("../controllers/flashcardController");
 
-module.exports = router;
+
+router.post("/",controller.createFlashcard);
+
+
+router.get("/:categoryId",
+controller.getFlashcardsByCategory);
+
+
+
+module.exports=router;
